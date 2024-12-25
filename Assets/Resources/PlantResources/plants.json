@@ -1,0 +1,23 @@
+﻿{
+
+    "plants": [
+        {
+            "name": "Sunflower",
+            "spritePath": "PlantResources/Sprites/Sunflower",
+            "canHang": false,
+            "isUnlocked": true
+        },
+        {
+            "name": "Hanging Ivy",
+            "spritePath": "PlantResources/Sprites/HangingIvy",
+            "canHang": true,
+            "isUnlocked": false
+        },
+        {
+            "name": "Cactus",
+            "spritePath": "PlantResources/Sprites/Cactus",
+            "canHang": false,
+            "isUnlocked": true
+        }
+    ]
+}
