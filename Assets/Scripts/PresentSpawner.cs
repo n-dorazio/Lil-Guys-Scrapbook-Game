@@ -54,20 +54,6 @@ public class PresentSpawner : MonoBehaviour
         Debug.Log($"Present spawned at position: {spawnPoint.position}");
         
         CurrentPresent.transform.SetParent(transform);
-        
-        Gift giftComponent = CurrentPresent.GetComponent<Gift>();
-        if (giftComponent != null)
-        {
-            giftComponent.Inventory = FindObjectOfType<Inventory>();
-            if (giftComponent.Inventory == null)
-            {
-                Debug.LogError("Could not find Inventory in scene!");
-            }
-        }
-        else
-        {
-            Debug.LogError("Present prefab is missing Gift component!");
-        }
     }
 
     public void ClearCurrentPresent()

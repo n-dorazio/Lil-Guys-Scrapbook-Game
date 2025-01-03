@@ -1,0 +1,40 @@
+﻿{
+    "presentTypes": [
+        {
+            "name": "Basic Gift",
+            "spritePath": "PlantResources/Sprites/Gift_Basic",
+            "lootPool": [
+                {
+                    "plantName": "Sunflower",
+                    "weight": 50
+                },
+                {
+                    "plantName": "Cactus",
+                    "weight": 30
+                },
+                {
+                    "plantName": "Hanging Ivy",
+                    "weight": 20
+                }
+            ]
+        },
+        {
+            "name": "Premium Gift",
+            "spritePath": "PlantResources/Sprites/Gift_Premium",
+            "lootPool": [
+                {
+                    "plantName": "Sunflower",
+                    "weight": 20
+                },
+                {
+                    "plantName": "Cactus",
+                    "weight": 30
+                },
+                {
+                    "plantName": "Hanging Ivy",
+                    "weight": 50
+                }
+            ]
+        }
+    ]
+}

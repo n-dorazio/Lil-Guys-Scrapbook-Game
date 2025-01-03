@@ -5,13 +5,37 @@
             "name": "Sunflower",
             "spritePath": "PlantResources/Sprites/Sunflower",
             "canHang": false,
-            "isUnlocked": true
+            "isUnlocked": true,
+            "variants": [
+                {
+                    "name": "Sunflower - Purple",
+                    "spritePath": "PlantResources/Sprites/Sunflower_Purple",
+                    "isUnlocked": false
+                },
+                {
+                    "name": "Sunflower - Big",
+                    "spritePath": "PlantResources/Sprites/Sunflower_Big",
+                    "isUnlocked": false
+                }
+            ]
         },
         {
             "name": "Hanging Ivy",
             "spritePath": "PlantResources/Sprites/HangingIvy",
             "canHang": true,
-            "isUnlocked": false
+            "isUnlocked": false,
+            "variants": [
+                {
+                    "name": "Hanging Ivy - Yellow",
+                    "spritePath": "PlantResources/Sprites/HangingIvy_Yellow",
+                    "isUnlocked": false
+                },
+                {
+                    "name": "Hanging Ivy - Red",
+                    "spritePath": "PlantResources/Sprites/HangingIvy_Red",
+                    "isUnlocked": false
+                }
+            ]
         },
         {
             "name": "Cactus",

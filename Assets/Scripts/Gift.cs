@@ -2,14 +2,6 @@
 
 public class Gift : MonoBehaviour
 {
-    [SerializeField] private Inventory inventory;
-    
-    public Inventory Inventory 
-    { 
-        get => inventory;
-        set => inventory = value;
-    }
-
     private void OnMouseDown()
     {
         Debug.Log("Gift clicked - attempting to open");
@@ -18,12 +10,6 @@ public class Gift : MonoBehaviour
 
     public void OpenGift()
     {
-        if (inventory == null)
-        {
-            Debug.LogError("No inventory reference set on Gift!");
-            return;
-        }
-
         if (PlantDatabase.Instance == null || PlantDatabase.Instance.Plants.Count == 0)
         {
             Debug.LogError("Cannot open gift - PlantDatabase instance is missing or empty!");
@@ -34,9 +20,13 @@ public class Gift : MonoBehaviour
         int randomIndex = Random.Range(0, PlantDatabase.Instance.Plants.Count);
         Plant randomPlant = PlantDatabase.Instance.Plants[randomIndex];
 
-        // Add plant to the inventory
-        inventory.AddPlant(randomPlant);
-        Debug.Log($"Added {randomPlant.name} to inventory.");
+        // Unlock the plant
+        randomPlant.isUnlocked = true;
+        Debug.Log($"Unlocked {randomPlant.name}");
+
+        // Update the UI if it's visible
+        //Add animation of plant appearing in book
+        ScrapbookUI.Instance?.PopulateMainPage();
 
         // Remove the gift from the scene
         Destroy(gameObject);

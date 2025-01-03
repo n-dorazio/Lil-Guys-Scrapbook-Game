@@ -28,7 +28,7 @@ public class PlantSlot : MonoBehaviour
         Debug.Log($"Clicked on slot: {name}");
 
         // Get the currently selected plant from the inventory
-        Plant selectedPlant = InventoryUI.Instance?.GetSelectedPlant();
+        Plant selectedPlant = ScrapbookUI.Instance?.GetSelectedPlant();
 
         if (selectedPlant == null)
         {
@@ -56,7 +56,7 @@ public class PlantSlot : MonoBehaviour
         previousSlot = this;
 
         // Clear the plant selection from the inventory
-        InventoryUI.Instance?.ClearSelectedPlant();
+        ScrapbookUI.Instance?.ClearSelectedPlant();
     }
 
     private void PlacePlant(Plant plant)
@@ -108,6 +108,30 @@ public class PlantSlot : MonoBehaviour
         foreach (PlantSlot slot in FindObjectsOfType<PlantSlot>())
         {
             slot.HighlightSlot(highlight);
+        }
+    }
+
+    public static bool IsPlantPlaced(Plant plant)
+    {
+        foreach (PlantSlot slot in FindObjectsOfType<PlantSlot>())
+        {
+            if (slot.currentPlant != null && slot.currentPlant.PlantData == plant)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void RemovePlantFromSlot(Plant plant)
+    {
+        foreach (PlantSlot slot in FindObjectsOfType<PlantSlot>())
+        {
+            if (slot.currentPlant != null && slot.currentPlant.PlantData == plant)
+            {
+                slot.RemovePlant();
+                return;
+            }
         }
     }
 }
